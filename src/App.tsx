@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FirebaseAppProvider } from 'reactfire';
+import './App.scss';
+import { FirebaseApp } from './firebase/FirebaseApp';
 
-function App() {
+const firebaseConfig = {
+  apiKey: 'AIzaSyBg3u1sJlyJwQCE95oSDH_mtLABS-is8ZM',
+  authDomain: 'rxfire-525a3.firebaseapp.com',
+  databaseURL: 'https://rxfire-525a3.firebaseio.com',
+  projectId: 'rxfire-525a3',
+  storageBucket: 'rxfire-525a3.appspot.com',
+  messagingSenderId: '844180061847',
+  appId: '1:844180061847:web:400f7142e2d1aaeb',
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+      <FirebaseApp />
+    </FirebaseAppProvider>
+  )
 }
 
 export default App;
