@@ -1,13 +1,11 @@
 import 'firebase/storage';
-import * as React from 'react';
 import { useState } from 'react';
 import { StorageProvider, useFirebaseApp, useStorage, useStorageDownloadURL, useStorageTask } from 'reactfire';
 import { CardSection } from '../display/Card';
 import { LoadingSpinner } from '../display/LoadingSpinner';
 import { AuthWrapper } from './Auth';
-import { ref, uploadBytesResumable, getStorage } from 'firebase/storage';
-
-import type { UploadTaskSnapshot, UploadTask, StorageReference } from 'firebase/storage';
+import {ref, uploadBytesResumable, getStorage} from 'firebase/storage';
+import type {UploadTaskSnapshot, UploadTask, StorageReference} from 'firebase/storage';
 
 const UploadProgress = ({ uploadTask, storageRef }) => {
   const { status, data: uploadProgress } = useStorageTask<UploadTaskSnapshot>(uploadTask, storageRef);
@@ -66,12 +64,12 @@ export function Storage() {
   return (
     <AuthWrapper fallback={<span>Sign in to use this component</span>}>
       <StorageProvider sdk={getStorage(app)}>
-        <CardSection title="Fetch image">
-          <FetchImage storagePath="Cloud Storage for Firebase (Independent Icon).png" />
-        </CardSection>
-        <CardSection title="Upload image">
-          <ImageUploadButton />
-        </CardSection>
+      <CardSection title="Fetch image">
+        <FetchImage storagePath="Cloud Storage for Firebase (Independent Icon).png" />
+      </CardSection>
+      <CardSection title="Upload image">
+        <ImageUploadButton />
+      </CardSection>
       </StorageProvider>
     </AuthWrapper>
   );

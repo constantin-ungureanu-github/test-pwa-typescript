@@ -1,9 +1,9 @@
-import * as React from 'react';
 import { AuthProvider, useFirebaseApp, useInitPerformance } from 'reactfire';
 import { Card } from '../display/Card';
 import { Analytics } from './Analytics'
 import { Auth } from './Auth';
 import { Firestore } from './Firestore';
+import { Functions } from './Functions';
 import { RealtimeDatabase } from './RealtimeDatabase';
 import { RemoteConfig } from './RemoteConfig';
 import { Storage } from './Storage';
@@ -29,6 +29,9 @@ export const FirebaseApp = () => {
         </Card>
         <Card title="Firestore">
           <Firestore />
+        </Card>
+        <Card title="Functions">
+          <Functions />
         </Card>
         <Card title="Realtime Database">
           <RealtimeDatabase />

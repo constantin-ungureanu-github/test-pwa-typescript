@@ -1,7 +1,6 @@
 import 'firebase/database';
 import { getDatabase, ref, query, orderByChild, push, set, increment as rtdbIncrement } from 'firebase/database';
-import * as React from 'react';
-import { DatabaseProvider, useDatabase, useDatabaseListData, useDatabaseObjectData, useFirebaseApp, useUser } from 'reactfire';
+import { DatabaseProvider, useDatabase, useDatabaseListData, useDatabaseObjectData, useFirebaseApp } from 'reactfire';
 import { WideButton } from '../display/Button';
 import { CardSection } from '../display/Card';
 import { LoadingSpinner } from '../display/LoadingSpinner';

@@ -1,6 +1,4 @@
 import { fetchAndActivate, getRemoteConfig } from 'firebase/remote-config';
-import * as React from 'react';
-import { useEffect, useState } from 'react';
 import { RemoteConfigProvider, useRemoteConfigString, useInitRemoteConfig } from 'reactfire';
 import { CardSection } from '../display/Card';
 import { LoadingSpinner } from '../display/LoadingSpinner';

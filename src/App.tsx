@@ -1,6 +1,5 @@
 import React from 'react';
 import { FirebaseAppProvider } from 'reactfire';
-import './App.scss';
 import { FirebaseApp } from './firebase/FirebaseApp';
 
 const firebaseConfig = {
@@ -15,7 +14,7 @@ const firebaseConfig = {
 
 const App = () => {
   return (
-    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig} suspense={false}>
       <FirebaseApp />
     </FirebaseAppProvider>
   )

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useState } from 'react';
 import { FirestoreProvider, useFirestore, useFirestoreCollectionData, useFirestoreDocData, useFirestoreDocDataOnce, useInitFirestore } from 'reactfire';
 import { WideButton } from '../display/Button';
@@ -113,20 +112,18 @@ export const Firestore = () => {
   }
 
   return (
-    <>
-      <AuthWrapper fallback={<span>Sign in to use this component</span>}>
-        <FirestoreProvider sdk={firestoreInstance}>
-          <CardSection title="Get/Set document value">
-            <Counter />
-          </CardSection>
-          <CardSection title="Fetch data once">
-            <StaticValue />
-          </CardSection>
-          <CardSection title="Work with lists of data">
-            <AnimalsList />
-          </CardSection>
-        </FirestoreProvider>
-      </AuthWrapper>
-    </>
+    <AuthWrapper fallback={<span>Sign in to use this component</span>}>
+      <FirestoreProvider sdk={firestoreInstance}>
+        <CardSection title="Get/Set document value">
+          <Counter />
+        </CardSection>
+        <CardSection title="Fetch data once">
+          <StaticValue />
+        </CardSection>
+        <CardSection title="Work with lists of data">
+          <AnimalsList />
+        </CardSection>
+      </FirestoreProvider>
+    </AuthWrapper>
   );
 };
